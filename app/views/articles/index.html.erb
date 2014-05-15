@@ -11,3 +11,17 @@
 <% end %>
 
 <%= link_to "New Article", new_article_path, class: 'new_article' %>
+
+<br />
+<br />
+<% @models.each do |model| %>
+  <h3 style="margin:0;padding:0"><%=h model %></h3>
+  <table width="400">
+  <% model.constantize.columns.each do |col| %>
+    <tr>
+      <td><b><%=h col.name %></b></td><td><%=h col.sql_type %></td><td><%=h col.default.to_s %></td>
+    </tr>
+  <% end %>
+  </table>
+  <br />
+<% end %>

@@ -3,6 +3,7 @@ class ArticlesController < ApplicationController
 
 	def index
 		@articles = Article.all
+		@models = ['Article', 'Comment', 'Tag', 'Tagging']
 	end
 
 	def show
